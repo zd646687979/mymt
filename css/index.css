@@ -1,2 +1,79 @@
+@charset "UTF-8";
+body, div, p, ol, ul, li, dl, dt, dd, table, tr, td, form, h1, h2, h3, h4, h5, h6, hr, img, input, fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+a {
+  text-decoration: none; }
+
 body {
-  background: red; }
+  font-family: "微软雅黑",Arial; }
+
+ul, ol, li {
+  list-style: none; }
+
+img {
+  border: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100; }
+
+#navbox {
+  width: 100%;
+  height: 44px;
+  background: #000000; }
+  #navbox #nav {
+    width: 1300px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 auto;
+    padding-top: 12px;
+    position: relative; }
+    #navbox #nav .logo {
+      position: relative;
+      width: 122px;
+      height: 20px;
+      background: url(../img/logo.png) no-repeat;
+      margin: 0 48px;
+      float: left; }
+      #navbox #nav .logo .logomask {
+        position: absolute;
+        width: 122px;
+        height: 20px;
+        background: black;
+        opacity: 0; }
+  #navbox .nav_content, #navbox .nav_content li .a_content {
+    float: left; }
+    #navbox .nav_content li, #navbox .nav_content li .a_content li {
+      position: relative;
+      float: left;
+      overflow: hidden;
+      margin: 0 48px; }
+      #navbox .nav_content li .a_content {
+        display: block;
+        line-height: 20px;
+        font-size: 14px;
+        color: #ffffff; }
+  #navbox .nav_right, #navbox .nav_right li .a_right {
+    float: left; }
+    #navbox .nav_right li, #navbox .nav_right li .a_right li {
+      position: relative;
+      float: left;
+      overflow: hidden;
+      margin: 0 48px; }
+      #navbox .nav_right li .a_right {
+        display: block;
+        height: 20px;
+        width: 20px; }
+      #navbox .nav_right li:nth-child(1) .a_right {
+        background: url(../img/index_nav_search.png) no-repeat center center; }
+      #navbox .nav_right li:nth-child(2) .a_right {
+        background: url(../img/index_nav_mine.png) no-repeat center center; }
+  #navbox .limask {
+    display: block;
+    position: absolute;
+    width: 122px;
+    height: 20px;
+    background: black;
+    opacity: 0; }

@@ -1,5 +1,124 @@
-$color:red;
-
-body{
-    background: $color;
+//public
+@charset "utf-8";
+body,div,p,ol,ul,li,dl,dt,dd,table,tr,td,form,h1,h2,h3,h4,h5,h6,hr,img,input,fieldset{
+    padding:0;
+    margin:0;
+    border: 0;
 }
+a{
+    text-decoration:none;
+    }
+body{
+    font-family:"微软雅黑",Arial;
+    }
+ul,ol,li{
+    list-style:none;
+    }
+img{
+    border:0;
+    }
+h1,h2,h3,h4,h5,h6{
+    font-weight:100;
+    }
+
+
+@mixin opacity($opacity:0.3){
+        opacity: $opacity;
+}
+@mixin display($display:block){
+        display: $display;
+}
+@mixin overflow($overflow:hidden){
+        overflow: $overflow;
+}
+
+//nav导航
+
+#navbox{
+    $navHeight:44px;
+    width: 100%;
+    height: $navHeight;
+    background: #000000;
+    $logoHeight:20px;
+    $logoWidth:122px;
+    @mixin margin($margin:0 48px){
+        margin: $margin;
+    }
+    #nav{
+        width: 1300px;
+        height:$navHeight - 12px;
+        line-height:$navHeight - 12px;
+        margin: 0 auto;
+        padding-top: 12px;
+        position: relative;
+        
+            .logo{
+                position: relative;
+                width: $logoWidth;
+                height: $logoHeight;
+                background: url(../img/logo.png) no-repeat;
+                @include margin;
+                float: left;
+                .logomask{
+                    position: absolute;
+                    width: $logoWidth;
+                    height:$logoHeight ;
+                    background: black;
+                    @include opacity(0);
+                }
+            }
+        }
+        .nav_content{
+            float: left;
+            li{
+                 position:relative;
+                 float: left;
+                 @include overflow;
+                 @include margin;
+                .a_content{
+                    @include display;
+                    line-height:20px;
+                    font-size: 14px;
+                    color: #ffffff;
+                    @extend .nav_content;
+                }
+            }
+        }
+        .nav_right{
+            float: left;
+            li{
+                position:relative;
+                float: left;
+                @include overflow;
+                @include margin;
+                .a_right{
+                    @include display;
+                    height:20px;
+                    width:20px;
+                    @extend .nav_right;
+                }
+                &:nth-child(1){
+                    .a_right{
+                        background: url(../img/index_nav_search.png) no-repeat center center;
+                    }
+                }
+                &:nth-child(2){
+                    .a_right{
+                        background: url(../img/index_nav_mine.png) no-repeat center center;
+                    }
+                }
+            }
+        }
+        .limask{
+            @include display;
+            position: absolute;
+            width: $logoWidth;
+            height:$logoHeight ;
+            background: black;
+            @include opacity(0);
+        }
+}
+
+//banner轮播图
+
+
