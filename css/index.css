@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #searchMask {
   display: none;
-  z-index: 10;
+  z-index: 1;
   position: fixed;
   top: 0;
   width: 100%;
@@ -160,12 +160,68 @@ h1, h2, h3, h4, h5, h6 {
     color: #999999; }
   #searchDiv .searchTitle {
     display: block;
+    width: 100%;
     line-height: 44px;
     height: 44px;
     text-indent: 40px;
     font-size: 14px;
     color: white;
     border-bottom: 1px solid #272727; }
+
+#mybox {
+  position: absolute;
+  z-index: 20;
+  right: 28px;
+  top: 40px;
+  box-sizing: border-box;
+  width: 300px;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: white;
+  padding: 10px 20px;
+  display: none; }
+  #mybox .shangjian {
+    position: absolute;
+    top: -6px;
+    right: 92px;
+    width: 10px;
+    height: 10px;
+    border-left: 1px solid #cfcfcf;
+    border-top: 1px solid #cfcfcf;
+    transform: rotateZ(45deg);
+    background: #fff; }
+  #mybox .mybox_li {
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #cfcfcf;
+    color: #333333;
+    transition: color 0.5s;
+    font-size: 14px; }
+    #mybox .mybox_li i {
+      vertical-align: middle;
+      margin-right: 10px;
+      font-size: 20px;
+      transition: color 0.5s; }
+    #mybox .mybox_li a {
+      vertical-align: middle;
+      color: #333333;
+      transition: color 0.5s; }
+    #mybox .mybox_li:hover i, #mybox .mybox_li:hover a {
+      color: #ff6464;
+      transition: color 0.5s; }
+    #mybox .mybox_li:hover a {
+      text-decoration: underline; }
+  #mybox .mybox_first {
+    box-sizing: border-box;
+    color: #999999;
+    font-size: 14px;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    border-bottom: 1px solid #e7e7e7;
+    text-align: center; }
 
 .slider {
   position: relative;
@@ -181,7 +237,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   list-style: none;
   padding: 0;
-  z-index: 999;
+  z-index: 10;
   border: 0; }
 
 .slider .slider-pointer li {

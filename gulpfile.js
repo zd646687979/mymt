@@ -17,7 +17,7 @@ gulp.task("sass",function(){
 });
 //拷贝并压缩CSS
 gulp.task("copy-css",function(){
-	gulp.src("css/*.css")
+	gulp.src("css/*")
 	.pipe(minfyCSS())
 	.pipe(gulp.dest("D:\\phpStudy\\WWW\\mymt\\css"));
 });
@@ -36,7 +36,7 @@ gulp.task("copy-img",function(){
 gulp.task("watchall",function(){
 	gulp.watch("*.html",["copy-html"]);
 	gulp.watch("sass/*.scss",["sass"]);
-	gulp.watch("css/*.css",["copy-css"]);
+	gulp.watch("css/*",["copy-css"]);
 	gulp.watch("js/*.js",["copy-js"]);
 	gulp.watch("img/*.{png,jpg,gif}",["copy-img"]);
 });

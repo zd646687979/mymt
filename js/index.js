@@ -1,5 +1,5 @@
 //
-//点击搜索动画函数
+//点击搜索  动画函数
 function navSacle(){
 	$("#searchBtn").click(function(){
 		let lichild1 = $(".lichild1");
@@ -19,7 +19,7 @@ function navSacle(){
 		scaleNum=scaleNum-scaleSpace;
 		},10);
 	});
-	$("#searchText").blur(function(){
+	$("#searchMask,.fastLink,#closeSearch,.searchTitle").click(function(){
 		$(".searchDiv").css({display:"none"});
 		let lichild1 = $(".lichild1");
 		lichild1.css({display:"block"});
@@ -36,10 +36,15 @@ function navSacle(){
 		},10);
 	});
 }
+//
+//点击我的菜单函数
+$("#mineBtn").live("click",function(){
+	$("#mybox").css({display:"block"});
+});
 
 $(function(){
 	navSacle();
-
+	
 });
 
 /**轮播图
