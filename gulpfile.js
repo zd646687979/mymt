@@ -24,7 +24,6 @@ gulp.task("copy-css",function(){
 //拷贝并压缩JS
 gulp.task("copy-js",function(){
 	gulp.src("js/*.js")
-	.pipe(uglify())
 	.pipe(gulp.dest("D:\\phpStudy\\WWW\\mymt\\js"));
 });
 //拷贝并压缩img
