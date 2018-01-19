@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>手机号登录</title>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+	<div id="content" class="content">
+		<p id="formChecked"></p>
+		<div class="logo"></div>
+		<form id="login" action="php/dologin.php" method="post">	
+			<p class="username_box">
+				<span>+86</span>
+				<input type="text" id="username" value="" maxlength="11" placeholder="请输入手机号码"/>
+				<i id="usernameClose" class="iconfont icon-close-b"></i>
+			</p>
+			<p class="userpass_box">
+				<input type="password" id="userpass" value="" placeholder="请输入密码"/>
+				<i id="userpassClose" class="iconfont icon-close-b"></i>
+				<i id="usereyes" class="iconfont icon-eyes"></i>
+			</p>
+			<p class="checked">
+				<a id="callCheck" href="">短信验证码登录</a>
+			</p>
+			<input type="submit" id="suBtn" name="" value="登录"/>
+			
+		</form>
+		<p class="reg_user_box">
+			<a href="" class="forget_pass">忘记密码</a> 丨 <a href="" class="reg_user">用户注册</a>
+		</p>
+		<p class="login_more_text">
+			<span class="more_border more_left"></span>
+			<span class="more_content">使用以下方式快速登录</span>
+			<span class="more_border more_right"></span>
+		</p>
+		<p class="login_more">
+			<a href="" class="weibo"></a>
+			<a href="" class="qq"></a>
+		</p>
+	</div>
+	<div class="login_foot">
+		<p class="login_foot_1">
+			<a href="">登录</a>丨<a href="">注册账号</a>丨<a href="">美图官网</a>丨<a href="">了解美图</a>丨<a href="">加入美图</a>丨<a href="">回到顶部</a>
+		</p>
+		<p class="login_foot_2">
+			©2018  Meitu .Inc 美图公司版权所有   <a href="">增值电信业务经营许可证：B2-20040192</a>
+		</p>
+		<p class="login_foot_3">
+			<a href="">网络文化经营许可证：闽网文﹝2015﹞1661-028号</a>  <a href="">闽公网安备 35020302000186号</a> 违法和不良信息举报电话：400-990-9696
+		</p>
+		<p class="login_foot_4">
+			<a href="index.html"></a>
+		</p>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="js/tools.js" ></script>
+<script type="text/javascript">
+
+
+
+//
+//文本框函数关闭图标
+//
+function txtClose(domId,closeId){
+	$("#"+domId).parent().on("keyup focus","#"+domId,function(){
+		let user = document.getElementById(domId);
+		let close = document.getElementById(closeId);
+		if(user.value==""){
+			close.style.display ="none" ;
+		}else{
+			close.style.display ="block" ;
+		}
+		myBlur(closeId);
+	});
+	$("#"+domId).parent().on("click","#"+closeId,function(){
+		document.getElementById(domId).value="";
+		document.getElementById(domId).focus();
+		document.getElementById(closeId).style.display ="none" ;
+	});
+}
+
+$(function(){
+	txtClose("username","usernameClose");
+	txtClose("userpass","userpassClose");
+//密码显示与隐藏
+	$("#usereyes").toggle(function(){
+		$("#userpass").prop({"type":"text"});
+		$(this).css({opacity:0.5});
+	},
+	function(){
+		$("#userpass").prop({"type":"password"});
+		$(this).css({opacity:0.2});
+	})
+//表单验证提示框
+$("#suBtn").parent().on("click","#suBtn",function(){
+	var nameStr = $("#username")[0].value;
+	var passStr = $("#userpass")[0].value;
+	var isok = true;
+	if(!checkAll("Phone",nameStr)){
+		if(nameStr==""){
+			check("formChecked");
+			$("#formChecked")[0].innerHTML = "请输入手机号码！";
+			isok=false
+			return isok;
+		}
+		check("formChecked");
+		$("#formChecked")[0].innerHTML = "请输入正确的手机号码！";
+		isok=false
+		return isok;
+	}
+	if(!checkAll("userpass",passStr)){
+		if(passStr==""){
+			check("formChecked");
+			$("#formChecked")[0].innerHTML = "请输入密码！";
+			isok=false
+			return isok;
+		}
+		check("formChecked");
+		$("#formChecked")[0].innerHTML = "请输入6-16位密码！";
+		isok=false
+		return isok;
+	}
+})
+
+});
+</script>

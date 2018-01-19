@@ -396,7 +396,7 @@ h1, h2, h3, h4, h5, h6 {
 .content_box {
   width: 100%;
   padding: 4px 0;
-  background: white; }
+  background: #f4f4f4; }
   .content_box .content {
     min-width: 1420px;
     margin: 0 auto;
@@ -435,7 +435,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footbox {
   width: 100%;
-  background: white; }
+  background: #f4f4f4; }
   .footbox .foot {
     min-width: 1200px;
     padding: 0 110px;
@@ -483,12 +483,14 @@ h1, h2, h3, h4, h5, h6 {
           display: block;
           color: #333333;
           transition: color .5s;
-          background: url(../img/call_me_bg.jpg) right center no-repeat; }
+          background: url(../img/index-jingling-cion1.png) -130px -42px no-repeat;
+          background-size: 400px 400px; }
           .footbox .foot .foot1 .foot1_right a:hover {
             text-decoration: underline;
             color: #e13333;
             transition: color .5s; }
     .footbox .foot .foot2 {
+      border-top: 1px solid #dedede;
       overflow: hidden;
       padding: 24px 0; }
       .footbox .foot .foot2 a {
@@ -498,19 +500,28 @@ h1, h2, h3, h4, h5, h6 {
           text-decoration: underline;
           color: #e13333;
           transition: color .5s; }
+      .footbox .foot .foot2 .foot2_left {
+        overflow: hidden;
+        float: left; }
       .footbox .foot .foot2 .foot2_1 {
+        overflow: hidden;
         height: 22px;
         line-height: 22px;
         color: #333333;
         font-size: 12px; }
         .footbox .foot .foot2 .foot2_1 a {
-          margin: 0 20px; }
+          margin: 0 16px; }
+        .footbox .foot .foot2 .foot2_1 .foot2_left {
+          float: left; }
+        .footbox .foot .foot2 .foot2_1 .foot2_right {
+          float: right;
+          background: url(../img/index-jingling-cion1.png) -300px -2px no-repeat;
+          background-size: 400px 400px; }
       .footbox .foot .foot2 .foot2_2 {
         height: 22px;
         line-height: 22px;
         color: #333333;
-        font-size: 12px;
-        vertical-align: middle; }
+        font-size: 12px; }
         .footbox .foot .foot2 .foot2_2 span {
           display: inline-block;
           height: 20px;

@@ -39,31 +39,10 @@ function navSacle(){
 //
 //点击我的菜单函数
 function showMy(){
-	$("#nav").on("click","#mineBtn",function(){
+	$("#nav").on("click","#mineBtn",function(event){
 		$("#mybox").css({display:"block"});
 	});
-	window.onmousemove = function(event){
-			if($("#mybox").css("display")=="block"){
-				let mybox = $("#mybox");
-				let evt = event ||window.event;
-				let mouseLeft = evt.pageX;
-				let mouseTop = evt.pageY;
-				let myboxmp = mybox.offset();
-				let top = myboxmp.top;
-				let left = myboxmp.left;
-				let width = mybox.width();
-				let height = mybox.height();
-				console.log(mouseLeft,mouseTop);
-				console.log(myboxmp,width);
-				this.onmousedown = function(){	
-				if(mouseLeft<left || mouseLeft>left+width){
-					mybox.css({display:"none"});
-				}else if(mouseTop<top || mouseTop>height+top){
-					mybox.css({display:"none"});
-				}
-			}
-		}
-	}	
+	myBlur("mybox");	
 }
 $(function(){
 	//调用搜索框 控制 导航栏缩小动画
