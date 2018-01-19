@@ -60,7 +60,6 @@ h1, h2, h3, h4, h5, h6 {
     #navbox .nav_right li, #navbox .nav_right li .a_right li {
       position: relative;
       float: left;
-      overflow: hidden;
       margin: 0 48px; }
       #navbox .nav_right li .a_right {
         display: block;
@@ -71,7 +70,67 @@ h1, h2, h3, h4, h5, h6 {
       #navbox .nav_right li:last-child .a_right {
         background: url(../img/index_nav_mine.png) no-repeat center center; }
     #navbox .nav_right .right_limask, #navbox .nav_right li .a_right .right_limask {
+      width: 20px;
       cursor: pointer; }
+    #navbox .nav_right #mybox {
+      display: none;
+      position: absolute;
+      z-index: 20;
+      right: -89px;
+      top: 27px;
+      box-sizing: border-box;
+      width: 300px;
+      border: 1px solid #cfcfcf;
+      border-radius: 2px;
+      background: white;
+      padding: 10px 20px; }
+      #navbox .nav_right #mybox .shangjian {
+        position: absolute;
+        top: -6px;
+        right: 92px;
+        width: 10px;
+        height: 10px;
+        border-left: 1px solid #cfcfcf;
+        border-top: 1px solid #cfcfcf;
+        transform: rotateZ(45deg);
+        background: #fff; }
+      #navbox .nav_right #mybox li {
+        display: block;
+        width: 100%; }
+      #navbox .nav_right #mybox .mybox_li {
+        margin: 0;
+        height: 50px;
+        line-height: 50px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #cfcfcf;
+        color: #333333;
+        transition: color 0.5s;
+        font-size: 14px; }
+        #navbox .nav_right #mybox .mybox_li i {
+          vertical-align: middle;
+          margin-right: 10px;
+          font-size: 20px;
+          transition: color 0.5s; }
+        #navbox .nav_right #mybox .mybox_li a {
+          vertical-align: middle;
+          color: #333333;
+          transition: color 0.5s; }
+        #navbox .nav_right #mybox .mybox_li:hover i, #navbox .nav_right #mybox .mybox_li:hover a {
+          color: #e13333;
+          transition: color 0.5s; }
+        #navbox .nav_right #mybox .mybox_li:hover a {
+          text-decoration: underline; }
+      #navbox .nav_right #mybox .mybox_first {
+        display: block;
+        margin: 0;
+        box-sizing: border-box;
+        color: #999999;
+        font-size: 14px;
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+        border-bottom: 1px solid #e7e7e7;
+        text-align: center; }
   #navbox .limask {
     display: block;
     position: absolute;
@@ -167,61 +226,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
     color: white;
     border-bottom: 1px solid #272727; }
-
-#mybox {
-  position: absolute;
-  z-index: 20;
-  right: 28px;
-  top: 40px;
-  box-sizing: border-box;
-  width: 300px;
-  border: 1px solid #cfcfcf;
-  border-radius: 2px;
-  background: white;
-  padding: 10px 20px;
-  display: none; }
-  #mybox .shangjian {
-    position: absolute;
-    top: -6px;
-    right: 92px;
-    width: 10px;
-    height: 10px;
-    border-left: 1px solid #cfcfcf;
-    border-top: 1px solid #cfcfcf;
-    transform: rotateZ(45deg);
-    background: #fff; }
-  #mybox .mybox_li {
-    cursor: pointer;
-    height: 50px;
-    line-height: 50px;
-    box-sizing: border-box;
-    border-bottom: 1px solid #cfcfcf;
-    color: #333333;
-    transition: color 0.5s;
-    font-size: 14px; }
-    #mybox .mybox_li i {
-      vertical-align: middle;
-      margin-right: 10px;
-      font-size: 20px;
-      transition: color 0.5s; }
-    #mybox .mybox_li a {
-      vertical-align: middle;
-      color: #333333;
-      transition: color 0.5s; }
-    #mybox .mybox_li:hover i, #mybox .mybox_li:hover a {
-      color: #ff6464;
-      transition: color 0.5s; }
-    #mybox .mybox_li:hover a {
-      text-decoration: underline; }
-  #mybox .mybox_first {
-    box-sizing: border-box;
-    color: #999999;
-    font-size: 14px;
-    width: 100%;
-    height: 80px;
-    line-height: 80px;
-    border-bottom: 1px solid #e7e7e7;
-    text-align: center; }
 
 .slider {
   position: relative;
@@ -388,3 +392,129 @@ h1, h2, h3, h4, h5, h6 {
 .slider .slider-control:active {
   opacity: 1;
   border: 0; }
+
+.content_box {
+  width: 100%;
+  padding: 4px 0;
+  background: white; }
+  .content_box .content {
+    min-width: 1420px;
+    margin: 0 auto;
+    overflow: hidden; }
+    .content_box .content .contentdiv {
+      overflow: hidden;
+      position: relative;
+      float: left;
+      width: 350px;
+      height: 203px;
+      margin-right: 5px;
+      background: white; }
+      .content_box .content .contentdiv:hover img {
+        transform: scale(1.1);
+        transition: transform 1s; }
+      .content_box .content .contentdiv img {
+        position: absolute;
+        transform: scale(1);
+        transition: transform 1s; }
+      .content_box .content .contentdiv div {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 20px; }
+        .content_box .content .contentdiv div .p1 {
+          font-size: 12px; }
+        .content_box .content .contentdiv div .p2 {
+          font-size: 16px;
+          margin-top: 12px; }
+      .content_box .content .contentdiv a {
+        width: 100%;
+        height: 100%;
+        position: absolute; }
+    .content_box .content .contentdiv2 div p, .content_box .content .contentdiv3 div p {
+      color: white; }
+
+.footbox {
+  width: 100%;
+  background: white; }
+  .footbox .foot {
+    min-width: 1200px;
+    padding: 0 110px;
+    margin: 0 auto; }
+    .footbox .foot .foot1 {
+      overflow: hidden;
+      padding: 32px 0 24px; }
+      .footbox .foot .foot1 .foot1_left {
+        overflow: hidden;
+        float: left; }
+        .footbox .foot .foot1 .foot1_left ul {
+          float: left;
+          margin-right: 110px; }
+          .footbox .foot .foot1 .foot1_left ul li {
+            color: #333333;
+            font-size: 12px;
+            height: 26px;
+            line-height: 26px; }
+            .footbox .foot .foot1 .foot1_left ul li a {
+              color: #555555;
+              transition: color .5s; }
+              .footbox .foot .foot1 .foot1_left ul li a:hover {
+                text-decoration: underline;
+                color: #e15555;
+                transition: color .5s; }
+      .footbox .foot .foot1 .foot1_right {
+        width: 200px;
+        float: right; }
+        .footbox .foot .foot1 .foot1_right p {
+          font-size: 12px;
+          color: #333333;
+          line-height: 26px;
+          height: 26px; }
+          .footbox .foot .foot1 .foot1_right p span {
+            color: #555555;
+            margin-left: 10px; }
+        .footbox .foot .foot1 .foot1_right h2 {
+          line-height: 60px;
+          height: 60px; }
+        .footbox .foot .foot1 .foot1_right a {
+          font-size: 12px;
+          line-height: 26px;
+          height: 26px;
+          width: 66px;
+          display: block;
+          color: #333333;
+          transition: color .5s;
+          background: url(../img/call_me_bg.jpg) right center no-repeat; }
+          .footbox .foot .foot1 .foot1_right a:hover {
+            text-decoration: underline;
+            color: #e13333;
+            transition: color .5s; }
+    .footbox .foot .foot2 {
+      overflow: hidden;
+      padding: 24px 0; }
+      .footbox .foot .foot2 a {
+        color: #333333;
+        transition: color .5s; }
+        .footbox .foot .foot2 a:hover {
+          text-decoration: underline;
+          color: #e13333;
+          transition: color .5s; }
+      .footbox .foot .foot2 .foot2_1 {
+        height: 22px;
+        line-height: 22px;
+        color: #333333;
+        font-size: 12px; }
+        .footbox .foot .foot2 .foot2_1 a {
+          margin: 0 20px; }
+      .footbox .foot .foot2 .foot2_2 {
+        height: 22px;
+        line-height: 22px;
+        color: #333333;
+        font-size: 12px;
+        vertical-align: middle; }
+        .footbox .foot .foot2 .foot2_2 span {
+          display: inline-block;
+          height: 20px;
+          width: 80px;
+          background: url(../img/foot_gongan_bg.jpg);
+          cursor: pointer;
+          vertical-align: middle; }

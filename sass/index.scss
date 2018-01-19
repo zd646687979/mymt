@@ -31,8 +31,9 @@ h1,h2,h3,h4,h5,h6{
 @mixin overflow($overflow:hidden){
         overflow: $overflow;
 }
+//
 //nav导航
-
+//
 #navbox{
     $navHeight:44px;
     width: 100%;
@@ -85,10 +86,10 @@ h1,h2,h3,h4,h5,h6{
         }
         .nav_right{
             float: left;
+            
             li{
                 position:relative;
                 float: left;
-                @include overflow;
                 @include margin;
                 .a_right{
                     @include display;
@@ -108,7 +109,80 @@ h1,h2,h3,h4,h5,h6{
                 }
             }
             .right_limask{
+                width:20px ;
                 cursor: pointer;
+            }
+            //
+            //我的菜单
+            //
+            #mybox{
+                display: none;
+                position: absolute;
+                z-index: 20;
+                right: -89px;
+                top: 27px;
+                box-sizing: border-box;
+                width: 300px;
+                border: 1px solid #cfcfcf;
+                border-radius: 2px;
+                background: white;
+                padding:10px 20px ;
+                .shangjian{
+                    position: absolute;
+                    top: -6px;
+                    right: 92px;
+                    width:10px;
+                    height: 10px;
+                    border-left: 1px solid #cfcfcf;
+                    border-top: 1px solid #cfcfcf;
+                    transform: rotateZ(45deg);
+                    background: #fff;
+                }
+                li{
+                    display: block;
+                    width: 100%;
+                }
+                .mybox_li{
+                    margin: 0;
+                    height: 50px;
+                    line-height: 50px;
+                    box-sizing: border-box;
+                    border-bottom: 1px solid #cfcfcf;
+                    color: rgb(51,51,51);
+                    transition: color 0.5s;
+                    font-size: 14px;
+                    i{
+                        vertical-align: middle;
+                        margin-right:10px ;
+                        font-size: 20px;
+                        transition: color 0.5s;
+                    }
+                    a{
+                        vertical-align: middle;
+                        color: rgb(51,51,51);
+                        transition: color 0.5s;
+                    }
+                    &:hover i ,&:hover a{
+                        color: rgb(225,51,51);
+                        transition: color 0.5s;
+                    }
+                    &:hover a{
+                        text-decoration: underline;
+                    }
+                    
+                }
+                .mybox_first{
+                    display: block;
+                    margin: 0;
+                    box-sizing: border-box;
+                    color: #999999;
+                    font-size: 14px;
+                    width: 100%;
+                    height: 80px;
+                    line-height: 80px;
+                    border-bottom: 1px solid #e7e7e7;
+                    text-align: center;
+                }
             }
         }
         .limask{
@@ -228,69 +302,7 @@ h1,h2,h3,h4,h5,h6{
 //
 //my菜单
 //
-#mybox{
-    position: absolute;
-    z-index: 20;
-    right: 28px;
-    top: 40px;
-    box-sizing: border-box;
-    width: 300px;
-    border: 1px solid #cfcfcf;
-    border-radius: 2px;
-    background: white;
-    padding:10px 20px ;
-    display: none;
-    .shangjian{
-        position: absolute;
-        top: -6px;
-        right: 92px;
-        width:10px;
-        height: 10px;
-        border-left: 1px solid #cfcfcf;
-        border-top: 1px solid #cfcfcf;
-        transform: rotateZ(45deg);
-        background: #fff;
-    }
-    .mybox_li{
-        cursor: pointer;
-        height: 50px;
-        line-height: 50px;
-        box-sizing: border-box;
-        border-bottom: 1px solid #cfcfcf;
-        color: rgb(51,51,51);
-        transition: color 0.5s;
-        font-size: 14px;
-        i{
-            vertical-align: middle;
-            margin-right:10px ;
-            font-size: 20px;
-            transition: color 0.5s;
-        }
-        a{
-            vertical-align: middle;
-            color: rgb(51,51,51);
-            transition: color 0.5s;
-        }
-        &:hover i ,&:hover a{
-            color: rgb(255,100,100);
-            transition: color 0.5s;
-        }
-        &:hover a{
-            text-decoration: underline;
-        }
-        
-    }
-    .mybox_first{
-        box-sizing: border-box;
-        color: #999999;
-        font-size: 14px;
-        width: 100%;
-        height: 80px;
-        line-height: 80px;
-        border-bottom: 1px solid #e7e7e7;
-        text-align: center;
-    }
-}
+
 //
 //banner轮播图
 //
@@ -479,5 +491,174 @@ h1,h2,h3,h4,h5,h6{
     opacity: 1;
     border: 0;
   }
-
-//轮播图内嵌div
+//
+//content 主体内容部分
+//
+.content_box{
+    width: 100%;
+    padding: 4px 0;
+    background: white;
+    .content{
+        min-width:1420px;
+        margin: 0 auto;
+        overflow: hidden;
+        .contentdiv{
+            overflow: hidden;
+            position: relative;
+            float: left;
+            width:350px;
+            height: 203px;
+            margin-right: 5px;
+            background:white;
+            &:hover img{
+                transform: scale(1.1);
+                transition:transform 1s;
+            }
+            img{
+                position: absolute;
+                transform: scale(1);
+                transition:transform 1s;
+            }
+            div{
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                top: 20px;
+                .p1{
+                    font-size: 12px;
+                    
+                }
+                .p2{
+                    font-size: 16px;
+                    margin-top: 12px;
+                }
+            }
+            a{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+        }
+        .contentdiv2,.contentdiv3{
+            div{
+                p{
+                    color: white;
+                }
+            }
+        }
+    }
+}
+//
+//底部公共
+//
+.footbox{
+    width: 100%;
+    background: white;
+    .foot{
+        min-width: 1200px; 
+        padding:0 110px;
+        margin: 0 auto;  
+        .foot1{
+            overflow: hidden;
+            padding: 32px 0 24px;
+            .foot1_left{
+                overflow: hidden;
+                float: left;
+                ul{
+                    float: left;
+                    margin-right: 110px;
+                    li{
+                        color: #333333;
+                        font-size: 12px;
+                        height: 26px;
+                        line-height: 26px;
+                        a{
+                            color: rgb(85,85,85);
+                            transition: color .5s;
+                            &:hover{
+                                text-decoration: underline;
+                                color: rgb(225,85,85);
+                                transition: color .5s;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            .foot1_right{
+                width: 200px;
+                float: right;
+                p{
+                    font-size: 12px;
+                    color: #333333;
+                    line-height: 26px;
+                    height: 26px;
+                    span{
+                        color:#555555 ;
+                        margin-left: 10px;
+                    }
+                }
+                h2{
+                    line-height: 60px;
+                    height: 60px;
+                }
+                a{
+                    font-size: 12px;
+                    line-height: 26px;
+                    height: 26px;
+                    width: 66px;
+                    display: block;
+                    color: rgb(51,51,51);
+                    transition: color .5s;
+                    background:url(../img/call_me_bg.jpg) right center no-repeat; 
+                    &:hover{
+                        text-decoration: underline;
+                        color: rgb(225,51,51);
+                        transition: color .5s;
+                    }
+                    
+                }
+            }
+        }
+        
+        .foot2{
+            overflow: hidden;
+            a{
+                color: rgb(51,51,51);
+                transition: color .5s;
+                
+                &:hover{
+                    text-decoration: underline;
+                    color: rgb(225,51,51);
+                    transition: color .5s;
+                }
+            }
+            padding: 24px 0;
+            .foot2_1{
+                height: 22px;
+                line-height: 22px;
+                color: #333333;
+                font-size: 12px;
+                a{
+                    margin:0 20px; 
+                }
+                
+            }
+            .foot2_2{
+                height: 22px;
+                line-height: 22px;
+                color: #333333;
+                font-size: 12px;
+                vertical-align: middle;
+                span{
+                    display: inline-block;
+                    height: 20px;
+                    width: 80px;
+                    background: url(../img/foot_gongan_bg.jpg);
+                    cursor: pointer;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
