@@ -8,7 +8,8 @@ a {
   text-decoration: none; }
 
 body {
-  font-family: "微软雅黑",Arial; }
+  font-family: "微软雅黑",Arial;
+  background: #f4f4f4; }
 
 ul, ol, li {
   list-style: none; }
@@ -230,10 +231,10 @@ h1, h2, h3, h4, h5, h6 {
 .slider {
   position: relative;
   height: 600px;
-  min-width: 1004px;
   width: 100%;
   overflow: hidden;
-  border: 0; }
+  border: 0;
+  margin: 0 auto; }
 
 .slider .slider-pointer {
   position: absolute;
@@ -398,7 +399,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4px 0;
   background: #f4f4f4; }
   .content_box .content {
-    min-width: 1420px;
+    width: 1420px;
     margin: 0 auto;
     overflow: hidden; }
     .content_box .content .contentdiv {
@@ -437,7 +438,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   background: #f4f4f4; }
   .footbox .foot {
-    min-width: 1200px;
+    width: 1200px;
     padding: 0 110px;
     margin: 0 auto; }
     .footbox .foot .foot1 {
@@ -445,7 +446,8 @@ h1, h2, h3, h4, h5, h6 {
       padding: 32px 0 24px; }
       .footbox .foot .foot1 .foot1_left {
         overflow: hidden;
-        float: left; }
+        float: left;
+        background: #f4f4f4; }
         .footbox .foot .foot1 .foot1_left ul {
           float: left;
           margin-right: 110px; }

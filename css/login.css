@@ -154,16 +154,16 @@ h1, h2, h3, h4, h5, h6 {
     .content .login_more_text span {
       float: left; }
     .content .login_more_text .more_border {
-      width: 70px;
+      width: 60px;
       height: 28px;
       border-bottom: 1px solid #efeef4; }
     .content .login_more_text .more_content {
       cursor: default;
-      width: 180px;
+      width: 200px;
       height: 56px;
       line-height: 56px;
       color: #919194;
-      font-size: 14px;
+      font-size: 12px;
       text-align: center; }
   .content .login_more {
     text-align: center;
