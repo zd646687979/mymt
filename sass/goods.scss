@@ -1,0 +1,133 @@
+//banner部分
+//
+//
+body{
+    color: #ffffff;
+}
+.banner{
+    width: 100%;
+    min-width: 1420px;
+    .banner_title{
+        width: 100%;
+        line-height: 55px;
+        height: 55px;
+        background: #FFFFFF;
+        text-indent: 110px;
+        a{
+            color: #333333;
+            font-size: 16px;
+        }
+    }
+    .banner_img{
+        display: block;
+        height: 424px;
+        width: 100%;
+        background: url(../img/goods_banner.png) center no-repeat;
+        background-size:  100% 424px;
+    }
+}
+//content主体部分
+//
+.content{
+    width: 100%;
+    min-width: 1420px;
+    padding-bottom: 25px;
+    .content_title{
+        width: 100%;
+        line-height: 70px;
+        height: 70px;
+        background: #FFFFFF;
+        text-indent: 150px;
+        border-bottom: 2px solid #f8f8f8;
+        position: relative;
+        .goods_all{
+            color: #e62878;
+        }
+        a{
+                color: rgb(85,85,85);
+                transition: color .5s;
+                font-size: 16px;
+                margin-right: 40px;
+                &:hover{
+                    text-decoration: underline;
+                    color: rgb(230,40,120);
+                    transition: color .5s;
+                }
+        }
+    }
+    .content_box{
+        width: 1200px;
+        margin: 0 auto;
+        padding:0 10px 40px;
+        overflow: hidden;
+        div{
+            float: left;
+            width: 300px;
+            height: 440px;
+            box-sizing: border-box;
+            border-left:1px solid #f1f1f1;
+            border-bottom:1px solid #f1f1f1;
+            transform: translateY(0px);
+            box-shadow:5px 0px 20px rgb(255,255,255) , -5px 0px 20px rgb(255,255,255) , 0px 15px 20px rgb(255,255,255) ;
+            transition: transform 0.3s , box-shadow 0.5s;
+            padding:40px 20px 0; 
+            &:hover{
+                transform: translateY(-1px);
+                box-shadow:5px 0px 20px rgb(225,225,225) , -5px 0px 20px rgb(225,225,225) , 0px 15px 20px rgb(225,225,225);
+                transition: transform 0.3s , box-shadow 0.5s;
+            }
+            a{
+                display: block;
+                color: rgb(85,85,85);
+                transition: color .5s;
+                font-size: 16px;
+                text-align:center; 
+                img{
+                    width:259px;
+                    height:259px;
+                }
+                &:hover{
+                    color: rgb(230,40,120);
+                    transition: color .5s;
+                }
+            }
+            .img_title{
+                line-height:20px ;
+                height: 20px;
+            }
+            p{
+                margin-top:12px;
+                color: #E62878;
+                text-align: center;
+            }
+        }
+    }
+}
+//底部链接
+.backIndex{
+    line-height: 62px;
+    height: 62px;
+    a{
+        display: inline-block;
+        margin-right: 10px;
+        height: 12px;
+    }
+    .home{
+        color:#999999;
+    }
+    .homeget{
+        width: 6px;
+        height: 12px;
+        background: url(../img/call_me_bg.jpg);
+    }
+    .nothome{
+        font-size: 12px ;
+        color: rgb(85,85,85);
+        transition: color .5s;
+        &:hover{
+            text-decoration: underline;
+            color: rgb(240,40,120);
+            transition: color .5s;
+        }
+    }
+}

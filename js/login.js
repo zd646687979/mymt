@@ -10,6 +10,7 @@ function txtClose(closeId,domId,nextId){
 		}else{
 			close.style.display ="block" ;
 		}
+		//失去焦点函数
 		myBlur(closeId);
 	});
 	if(arguments.length>2){

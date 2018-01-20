@@ -1,0 +1,106 @@
+body {
+  color: #ffffff; }
+
+.banner {
+  width: 100%;
+  min-width: 1420px; }
+  .banner .banner_title {
+    width: 100%;
+    line-height: 55px;
+    height: 55px;
+    background: #FFFFFF;
+    text-indent: 110px; }
+    .banner .banner_title a {
+      color: #333333;
+      font-size: 16px; }
+  .banner .banner_img {
+    display: block;
+    height: 424px;
+    width: 100%;
+    background: url(../img/goods_banner.png) center no-repeat;
+    background-size: 100% 424px; }
+
+.content {
+  width: 100%;
+  min-width: 1420px;
+  padding-bottom: 25px; }
+  .content .content_title {
+    width: 100%;
+    line-height: 70px;
+    height: 70px;
+    background: #FFFFFF;
+    text-indent: 150px;
+    border-bottom: 2px solid #f8f8f8;
+    position: relative; }
+    .content .content_title .goods_all {
+      color: #e62878; }
+    .content .content_title a {
+      color: #555555;
+      transition: color .5s;
+      font-size: 16px;
+      margin-right: 40px; }
+      .content .content_title a:hover {
+        text-decoration: underline;
+        color: #e62878;
+        transition: color .5s; }
+  .content .content_box {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px 40px;
+    overflow: hidden; }
+    .content .content_box div {
+      float: left;
+      width: 300px;
+      height: 440px;
+      box-sizing: border-box;
+      border-left: 1px solid #f1f1f1;
+      border-bottom: 1px solid #f1f1f1;
+      transform: translateY(0px);
+      box-shadow: 5px 0px 20px white, -5px 0px 20px white, 0px 15px 20px white;
+      transition: transform 0.3s , box-shadow 0.5s;
+      padding: 40px 20px 0; }
+      .content .content_box div:hover {
+        transform: translateY(-1px);
+        box-shadow: 5px 0px 20px #e1e1e1, -5px 0px 20px #e1e1e1, 0px 15px 20px #e1e1e1;
+        transition: transform 0.3s , box-shadow 0.5s; }
+      .content .content_box div a {
+        display: block;
+        color: #555555;
+        transition: color .5s;
+        font-size: 16px;
+        text-align: center; }
+        .content .content_box div a img {
+          width: 259px;
+          height: 259px; }
+        .content .content_box div a:hover {
+          color: #e62878;
+          transition: color .5s; }
+      .content .content_box div .img_title {
+        line-height: 20px;
+        height: 20px; }
+      .content .content_box div p {
+        margin-top: 12px;
+        color: #E62878;
+        text-align: center; }
+
+.backIndex {
+  line-height: 62px;
+  height: 62px; }
+  .backIndex a {
+    display: inline-block;
+    margin-right: 10px;
+    height: 12px; }
+  .backIndex .home {
+    color: #999999; }
+  .backIndex .homeget {
+    width: 6px;
+    height: 12px;
+    background: url(../img/call_me_bg.jpg); }
+  .backIndex .nothome {
+    font-size: 12px;
+    color: #555555;
+    transition: color .5s; }
+    .backIndex .nothome:hover {
+      text-decoration: underline;
+      color: #f02878;
+      transition: color .5s; }

@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>美图手机</title>
 	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
@@ -13,7 +14,6 @@
     	时间：2018-01-18
     	描述：搜索遮罩层
     -->
-    
     <div id="searchDiv" class="searchDiv">
     		<div id="closeSearch"><div></div></div>
     		<div class="searchText">
@@ -21,7 +21,7 @@
     			<input id="searchText" type="text" placeholder="搜索 Meitu.com" />
     		</div>
     		<p class="fastLink">快速链接</p>
-    		<a href="http://www.baidu.com" class="searchTitle search_1">配件</a>
+    		<a href="goods.html" class="searchTitle search_1">配件</a>
     		<a href="#" class="searchTitle search_2">售后维修网点</a>
     		<a href="#" class="searchTitle search_3">MeituFamily</a>
     		<a href="#" class="searchTitle search_4">体验店</a>
@@ -36,11 +36,11 @@
     <div id="navbox">
     	<div class="nav" id="nav">
     			<div href="" class="liparent logo" id="logo">
-    				<a href="" class="limask"></a>
+    				<a href="index.html" class="limask"></a>
     			</div>
     		<ul class="nav_content">
     			<li ><a class="a_content lichild1">手机</a> <a href="#" class="limask"></a></li>
-    			<li><a class="a_content lichild1">配件</a> <a href="#" class="limask"></a></li>
+    			<li><a class="a_content lichild1">配件</a> <a href="goods.html" class="limask"></a></li>
     			<li><a class="a_content lichild1">体验店</a> <a href="#" class="limask"></a></li>
     			<li><a class="a_content lichild1">个性定制</a> <a href="#" class="limask"></a></li>
     			<li><a class="a_content lichild1">服务支持</a> <a href="#" class="limask"></a></li>
@@ -59,7 +59,7 @@
 					    	<li class="mybox_li"><i class="iconfont icon-gouwudai101"></i><a href="#">购物袋</a></li>
 					    	<li class="mybox_li"><i class="iconfont icon-rili"></i><a href="#">我的预约</a></li>
 					    	<li class="mybox_li"><i class="iconfont icon-zhengchangcaigoudingdan"></i><a href="#">我的订单</a></li>
-					    	<li class="mybox_li"><i class="iconfont icon-saoma"></i><a href="#">S码通道</a></li>
+					    	<li class="mybox_li"><i class="iconfont icon-saoma"></i><a href="login.html">S码通道</a></li>
 					    	<li class="mybox_li"><i class="iconfont icon-denglu"></i><a href="login.html">登录</a></li>
 					    	<div class="shangjian"></div>
    						 </ul>
@@ -237,3 +237,11 @@
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript" src="js/tools.js" ></script>
 <script type="text/javascript" src="js/index.js" ></script>
+<script type="text/javascript">
+	$(function(){
+		//调用搜索框 控制 导航栏缩小动画
+		navSacle();
+		//调用展示，关闭  我的菜单动画
+		showMy();
+	});
+</script>
