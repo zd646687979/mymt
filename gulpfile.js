@@ -9,6 +9,10 @@ gulp.task("copy-html",function(){
 	gulp.src("*.html")
 	.pipe(gulp.dest("D:\\phpStudy\\WWW\\mymt"));
 });
+gulp.task("copy-goods-html",function(){
+	gulp.src("goods/*.html")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\mymt\\goods"));
+});
 //拷贝SASS
 gulp.task("sass",function(){
 	gulp.src("sass/*.scss")
@@ -35,6 +39,7 @@ gulp.task("copy-img",function(){
 //监听所有
 gulp.task("watchall",function(){
 	gulp.watch("*.html",["copy-html"]);
+	gulp.watch("goods/*.html",["copy-goods-html"]);
 	gulp.watch("sass/*.scss",["sass"]);
 	gulp.watch("css/*",["copy-css"]);
 	gulp.watch("js/*.js",["copy-js"]);

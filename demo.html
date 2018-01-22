@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style type="text/css">
+	.color_box{
+		 overflow: hidden;
+         margin-left: -20px;
+         width: 620px;
+	}
+	.color_box p{
+		 color: #333333;
+         float: left;
+         font-size: 18px;
+         box-sizing: border-box;
+         height:60px ;
+         line-height:60px ;
+         width: 290px;
+         margin:10px 0px  10px 20px;
+         border: 1px solid #cfcfcf;
+         border-radius: 3px;
+         border-color: rgb(207,207,207);
+         transition:  border-color 0.5s;
+         text-align: center;
+	}
+	p:hover{
+         border-color: rgb(230,40,120);
+         transition:  border-color 0.5s;
+       
+     }
+.goods_img_box{
+            position: relative;
+            overflow: hidden;
+            width: 540px;
+            height: 540px;
+            float:left;
+           
+         }
+</style>
+</head>
+<body>
+	<div id="color_box" class="color_box">
+		
+	</div>
+	<div id="goods_img_box" class="goods_img_box">
+		
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript">
+	let colorArr = ["Blue-Morning","PANDA&CHERRY","缤纷","海洋传说","环游世界","锦绘","蔓延","映像时空"];
+	function createColorArr(colorArr,colorboxId){
+		for(let i=0;i<colorArr.length;i++){
+			let $boxDom = $("#"+colorboxId);
+			let $colorDom = $(document.createElement("p"));
+			$colorDom.css({
+				color: "#333333",
+		         float: "left",
+		         "font-size": "18px",
+		         "box-sizing": "border-box",
+		         height:"60px" ,
+		         "line-height":"60px" ,
+		         width: "290px",
+		         margin:"10px 0px  10px 20px",
+		         border: "1px solid #cfcfcf",
+		         "border-radius": "3px",
+		          cursor: "pointer",
+		         "border-color":" rgb(207,207,207)",
+		         transition: " border-color 0.5s",
+		         "text-align":" center"
+			});
+			$colorDom.append(colorArr[i]);
+			$colorDom.hover(function(){
+				$colorDom.css({
+					"border-color": "rgb(230,40,120)",
+         			transition:  "border-color 0.5s"
+				});
+			},function(){
+				$colorDom.css({
+					"border-color":" rgb(207,207,207)",
+		         transition: " border-color 0.5s",
+				});
+			});
+			$boxDom.append($colorDom);
+		}
+	}
+	let imgArr = ["img/good_img_1.jpg","img/good_img_2.jpg","img/good_img_3.jpg","img/good_img_4.jpg","img/good_img_5.jpg","img/good_img_6.jpg","img/good_img_7.jpg","img/good_img_8.jpg"];
+	createColorArr(colorArr,"color_box");
+	function lunboArr(imgArr,imgboxId){
+		$boxDom = $("#"+imgboxId);
+		//创建轮播图盒子
+		let $imgBox = $(document.createElement("div"));
+		$imgBox.css({
+			width:"540px",
+			height:"540px",
+			position:"absolute"
+		});
+		$boxDom.append($imgBox);
+		//创建豆豆盒子
+		let $douBox = $(document.createElement("div"));
+		$douBox.css({
+			height:"20px",
+			position:"absolute",
+			bottom:"20px",
+			left:"50%",
+			transform:"translateX(-50%)",
+			"z-index":99
+		});
+		$boxDom.append($douBox);
+		for(let i=0;i<imgArr.length;i++){
+		//创建图片
+		let $img = $(document.createElement("img"));
+		$img.attr({"src":imgArr[i]});
+		$img.css({
+			width:"540px",
+			height:"540px",
+			display:"block",
+			position:"absolute",
+			left:(i*540)+"px"
+		});
+		$imgBox.append($img);
+		//创建豆豆
+		let $dou = $(document.createElement("div"));
+		$dou.css({
+			width:"10px",
+			height:"10px",
+			float :"left",
+			margin:"0 5px",
+			"background-color":"#e0e0e0",
+			"border-radius":"50%"
+		});
+		$douBox.append($dou);
+		$dou.on("click",function(){
+			let space = Math.abs(parseInt($imgBox[0].children[i].style.left));
+			alert(space);
+			let left = (i-1)*540;
+			myTimer = setInterval(()=>{
+				left+=27;
+				if(left>=space){
+					clearInterval(myTimer);
+				}
+				$imgBox.css({left:-1*left});
+			},27/space);
+	})
+		$dou.hover(function(){
+			$dou.css({
+				width:"12px",
+				height:"12px",
+				float :"left",
+				margin:"0 5px",
+				"background-color":"#cfcfcf",
+				"border-cadius":"50%"
+			});
+		},function(){
+			$dou.css({
+				width:"10px",
+				height:"10px",
+				"background-color":"#e0e0e0",
+			});
+		});
+	}
+}
+lunboArr(imgArr,"goods_img_box")	
+	
+	
+	
+	
+	
+	
+//	let imgArr = ["img/good_img_1.jpg","img/good_img_2.jpg","img/good_img_3.jpg","img/good_img_4.jpg","img/good_img_5.jpg","img/good_img_6.jpg","img/good_img_7.jpg","img/good_img_8.jpg"];
+//	function lunboArr(imgArr,boxDom){
+//		//创建轮播图盒子
+//		let imgBox = document.createElement("div");
+//		imgBox.style.width="540px";
+//		imgBox.style.height="540px";
+//		imgBox.style.position="absolute";
+//		boxDom.appendChild(imgBox);
+//		//创建豆豆盒子
+//		let douBox = document.createElement("div");
+//		douBox.style.height="20px";
+//		douBox.style.position="absolute";
+//		douBox.style.bottom="20px";
+//		douBox.style.left="50%";
+//		douBox.style.transform="translateX(-50%)";
+//		douBox.style.zIndex=99;
+//		boxDom.appendChild(douBox);
+//		for(let i=0;i<imgArr.length;i++){
+//		//创建图片
+//		let img = document.createElement("img");
+//		img.src=imgArr[i];
+//		img.style.width=540+"px";
+//		img.style.height=540+"px";
+//		img.style.display="block";
+//		img.style.position="absolute";
+//		img.style.left=(i*540)+"px";
+//		imgBox.appendChild(img);
+//		//创建豆豆
+//		let dou = document.createElement("div");
+//		dou.style.width="10px";
+//		dou.style.height="10px";
+//		dou.style.float ="left";
+//		dou.style.margin="0 5px";
+//		dou.style.backgroundColor="#e0e0e0";
+//		dou.style.borderRadius="50%";
+//		douBox.appendChild(dou);
+//		dou.onclick = function(){
+//			let space = Math.abs(parseInt(imgBox.children[i].style.left));
+//			let left = (i-1)*540;
+//			myTimer = setInterval(()=>{
+//				left+=27;
+//				if(left>=space){
+//					clearInterval(myTimer);
+//				}
+//				imgBox.style.left=-1*(left)+"px";
+//			},27/space);
+//		}
+//		dou.onmouseover = function(){
+//			dou.style.width="12px";
+//			dou.style.height="12px";
+//			dou.style.float ="left";
+//			dou.style.margin="0 5px";
+//			dou.style.backgroundColor="#cfcfcf";
+//			dou.style.borderRadius="50%";
+//		}
+//		dou.onmouseout = function(){
+//			dou.style.width="10px";
+//			dou.style.height="10px";
+//			dou.style.float ="left";
+//			dou.style.margin="0 5px";
+//			dou.style.backgroundColor="#e0e0e0";
+//			dou.style.borderRadius="50%";
+//		}
+//	}
+//}
+
+
+</script>
