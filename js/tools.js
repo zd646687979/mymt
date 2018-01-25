@@ -45,18 +45,15 @@ function myBlur(objId){
 //  			<p>RMB 29</p>
 //  		</div>
 function createGoods(jsonObj,domId){
-	//let jsonObj = JSON.parse(obj);
 	let str="";
-	for(let key in jsonObj){
-		for(let i in jsonObj[key]){
-			let imgsrc = jsonObj[key][i].imgsrc;
-			let titlestr = jsonObj[key][i].titlestr;
-			let money= jsonObj[key][i].money;
-			let address= jsonObj[key][i].address;
+		for(let i=0;i<jsonObj.length;i++){
+			let imgsrc = jsonObj[i].goodsImg;
+			let titlestr = jsonObj[i].goodsName;
+			let money= jsonObj[i].goodsPrice;
+			let address= jsonObj[i].beiyong1;
 			let addstr="<div><a href='"+address+"'><img src='"+imgsrc+"'></a><a  href='"+address+"' class='img_title'>"+titlestr+"</a><p>RMB "+money+"</p></div>";
 			str=str+addstr;
 		}
-	}
 	document.getElementById(domId).innerHTML=str;
 }
 
@@ -95,14 +92,15 @@ function check(id){
 //	 false验证失败
 function checkAll(cls,str){
 	switch(cls){
-		case "username" : if(/^[a-zA-Z]\w{5,11}$/.test(str)){
+		case "username" : if(/^[a-zA-Z]\d{5,11}$/.test(str)){
 							return true;
 						}else{
 							return false
 							};break;
-		case "userpass" : if(/^\d{6,16}$/.test(str)){
+							
+		case "userpass" : if(/^\w{6,16}$/.test(str)){
 							return true;
-						}else{
+					}else{
 							return false
 							};break;
 		case "userMail" : if(/^\w{1,}\@\w{1,}\.\w{1,}$/.test(str)){
@@ -175,7 +173,7 @@ function showMy(){
 //          height: 540px;）
 //
 	function createLunboArr(imgArr,imgboxId){
-		$boxDom = $("#"+imgboxId);
+		let $boxDom = $("#"+imgboxId);
 		//创建轮播图盒子
 		let $imgBox = $(document.createElement("div"));
 		$imgBox.css({
@@ -251,8 +249,8 @@ function showMy(){
 //参数：颜色   数组
 //    父元素id名
 //
-function createColorArr(colorArr,colorboxId,changetextId,buyId){
-	
+function createColorArr(colorArr,colorboxId,changetextId,buyId,imgBoxid,imgArr){
+			let $img = $("#"+imgBoxid+" img");
 			let $buyDom = $("#"+buyId);
 		for(let i=0;i<colorArr.length;i++){
 			let $changetextDom = $("#"+changetextId);
@@ -292,6 +290,9 @@ function createColorArr(colorArr,colorboxId,changetextId,buyId){
 			});
 			
 			$colorDom.on("click",function(){
+				
+				$img.css({"display":"block","z-index":999});
+				$img.attr({"src":imgArr[i]})
 				let space= 8;
 				let height = $boxDom.height();
 				$changetextDom.html(colorArr[i]);

@@ -65,6 +65,8 @@ $("#suBtn").parent().on("click","#suBtn",function(){
 		$("#formChecked")[0].innerHTML = "请输入6-16位密码！";
 		return false;
 	}
-	$("form").submit();
+	$("form").submit(function(){
+		return true;
+	});
 })
 });

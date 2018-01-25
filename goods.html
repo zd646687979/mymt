@@ -6,6 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="css/public.css">
 	<link rel="stylesheet" type="text/css" href="css/goods.css">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
 </head>
 <body>
 			<!--
@@ -20,7 +24,7 @@
 	    			<input id="searchText" type="text" placeholder="搜索 Meitu.com" />
 	    		</div>
 	    		<p class="fastLink">快速链接</p>
-	    		<a href="http://www.baidu.com" class="searchTitle search_1">配件</a>
+	    		<a href="goods.html" class="searchTitle search_1">配件</a>
 	    		<a href="#" class="searchTitle search_2">售后维修网点</a>
 	    		<a href="#" class="searchTitle search_3">MeituFamily</a>
 	    		<a href="#" class="searchTitle search_4">体验店</a>
@@ -188,70 +192,20 @@
 		navSacle();
 		//调用展示，关闭  我的菜单动画
 		showMy();
-		//商品信息json
-		let goods ={
-						a:[{
-							imgsrc:"img/goods1.jpg",
-							titlestr:"美图手机电源适配器",
-				          address:"goods_1.html",
-							money:"29"
-						},{
-							imgsrc:"img/goods2.jpg",
-							titlestr:"美图遥控器第三代",
-				          address:"child/goods2.html",
-							money:"89"
-						},
-						{
-							imgsrc:"img/goods3.jpg",
-							titlestr:"MeituFamily 潮趣手机壳",
-				          	address:"child/goods3.html",
-							money:"79"
-						},
-						{
-							imgsrc:"img/goods4.jpg",
-							titlestr:"MeituFamily鸡极向上潮Tee",
-				          	address:"child/goods3.html",
-							money:"139"
-						},
-						{
-							imgsrc:"img/goods5.jpg",
-							titlestr:"美图手机电源适配器",
-				          	address:"child/goods3.html",
-							money:"29"
-						},
-						{
-							imgsrc:"img/goods6.jpg",
-							titlestr:"小笼包鸡硬本",
-				          	address:"child/goods3.html",
-							money:"49"
-						},
-						{
-							imgsrc:"img/goods7.jpg",
-							titlestr:"MeituFamily抱枕",
-				          	address:"child/goods3.html",
-							money:"79-159"
-						},
-						{
-							imgsrc:"img/goods8.jpg",
-							titlestr:"MeituFamily x THERMOS 保温杯",
-				          	address:"child/goods3.html",
-							money:"349"
-						},
-						{
-							imgsrc:"img/goods9.jpg",
-							titlestr:"MeituFamily公仔",
-				          	address:"child/goods3.html",
-							money:"69-169"
-						},
-						{
-							imgsrc:"img/goods10.jpg",
-							titlestr:"美图手机 Type-C数据线",
-				          	address:"child/goods3.html",
-							money:"39"
-						}]
-			     	};
 		//动态产生图片
-		createGoods(goods,"content_box");
+		$.ajax({
+			type:"get",
+			url:"getGoodsList.php",
+			dataType:"json",
+			success:function(data){
+				createGoods(data,"content_box");
+			}
+		});
+		
+		
+		
+		
+		
 		
 		for(let i =0; i<=($("#content_box div").length%4) ;i++){
 			$("#content_box div").eq(i*4).css({"border-left" : 0});

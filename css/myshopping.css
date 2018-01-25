@@ -1,0 +1,122 @@
+body {
+  background: #CFCFCF; }
+
+.content_title {
+  width: 100%;
+  border-bottom: 1px solid #e1e1e1;
+  background: #ffffff; }
+  .content_title p {
+    margin-left: 60px;
+    font-size: 18px;
+    color: #333333;
+    line-height: 50px;
+    height: 50px; }
+
+.content {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+  padding-bottom: 35px; }
+  .content .content_box {
+    width: 1200px;
+    margin: 15px auto 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #f4f4f4;
+    padding: 15px 25px 0; }
+    .content .content_box .goods_box {
+      padding: 20px 0;
+      overflow: hidden;
+      background: #ffffff; }
+      .content .content_box .goods_box .goods {
+        text-align: right;
+        padding: 25px 0;
+        line-height: 170px;
+        height: 170px;
+        box-sizing: border-box;
+        overflow: hidden; }
+        .content .content_box .goods_box .goods img {
+          display: block;
+          float: left;
+          width: 120px;
+          height: 120px; }
+        .content .content_box .goods_box .goods .goods_content {
+          margin-left: 30px;
+          overflow: hidden;
+          float: left;
+          color: #999999;
+          line-height: 120px;
+          height: 120px; }
+          .content .content_box .goods_box .goods .goods_content .goods_name_price {
+            width: 570px;
+            height: 120px;
+            overflow: hidden;
+            float: left;
+            font-size: 16px; }
+            .content .content_box .goods_box .goods .goods_content .goods_name_price a {
+              font-size: 18px;
+              float: left;
+              color: #333333;
+              transition: color 0.5s; }
+              .content .content_box .goods_box .goods .goods_content .goods_name_price a:hover {
+                color: #e62878;
+                text-decoration: underline;
+                transition: color 0.5s; }
+            .content .content_box .goods_box .goods .goods_content .goods_name_price .rmb {
+              float: right; }
+          .content .content_box .goods_box .goods .goods_content .reduce_plus {
+            width: 220px;
+            text-align: right;
+            float: left; }
+            .content .content_box .goods_box .goods .goods_content .reduce_plus span {
+              margin: 0 10px;
+              color: #000000; }
+            .content .content_box .goods_box .goods .goods_content .reduce_plus i {
+              font-size: 18px;
+              transition: color .3s;
+              color: #cfcfcf;
+              cursor: pointer; }
+              .content .content_box .goods_box .goods .goods_content .reduce_plus i:hover {
+                color: #e62878;
+                transition: color 0.3s; }
+          .content .content_box .goods_box .goods .goods_content .zong_price {
+            font-size: 16px;
+            color: #000000;
+            float: left;
+            text-align: right;
+            width: 120px; }
+      .content .content_box .goods_box .close {
+        line-height: 120px;
+        height: 120px; }
+        .content .content_box .goods_box .close i {
+          font-size: 18px;
+          transition: color .3s;
+          color: #cfcfcf;
+          cursor: pointer; }
+          .content .content_box .goods_box .close i:hover {
+            color: #e62878;
+            transition: color 0.3s; }
+    .content .content_box .payfor {
+      padding: 36px; }
+      .content .content_box .payfor .moneybox {
+        line-height: 65px;
+        height: 65px;
+        text-align: right; }
+        .content .content_box .payfor .moneybox span {
+          color: #e62878;
+          font-size: 26px; }
+      .content .content_box .payfor .btnbox {
+        text-align: right; }
+        .content .content_box .payfor .btnbox #payMoney {
+          line-height: 48px;
+          height: 48px;
+          width: 250px;
+          text-align: center;
+          font-size: 20px;
+          background: #e62878;
+          transition: background 0.5s;
+          border-radius: 3px;
+          color: #ffffff; }
+          .content .content_box .payfor .btnbox #payMoney:hover {
+            background: #e64c8d;
+            transition: background 0.5s; }

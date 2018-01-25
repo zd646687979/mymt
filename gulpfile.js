@@ -6,14 +6,19 @@ var imagemin = require("gulp-imagemin");
 
 //拷贝HTML
 gulp.task("copy-html",function(){
-	gulp.src("*.html")
+	gulp.src("*.*")
 	.pipe(gulp.dest("D:\\phpStudy\\WWW\\mymt"));
 });
 gulp.task("copy-goods-html",function(){
 	gulp.src("goods/*.html")
 	.pipe(gulp.dest("D:\\phpStudy\\WWW\\mymt\\goods"));
 });
-//拷贝SASS
+//拷贝PHP
+gulp.task("copy-php",function(){
+	gulp.src("php/*.php")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\mymt\\php"));
+});
+//拷贝SASSw
 gulp.task("sass",function(){
 	gulp.src("sass/*.scss")
 	.pipe(sass())
@@ -38,7 +43,8 @@ gulp.task("copy-img",function(){
 });
 //监听所有
 gulp.task("watchall",function(){
-	gulp.watch("*.html",["copy-html"]);
+	gulp.watch("*.*",["copy-html"]);
+	gulp.watch("php/*.php",["copy-php"]);
 	gulp.watch("goods/*.html",["copy-goods-html"]);
 	gulp.watch("sass/*.scss",["sass"]);
 	gulp.watch("css/*",["copy-css"]);

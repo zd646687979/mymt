@@ -1,0 +1,157 @@
+body{
+    background: #CFCFCF;
+     
+}
+.content_title{
+    width: 100%;
+    border-bottom:1px solid #e1e1e1;
+    
+     background: #ffffff;
+    p{
+        margin-left: 60px;
+        font-size: 18px;
+        color: #333333;
+        line-height: 50px;
+        height: 50px;
+    }
+}
+.content{
+     width: 100%;
+     overflow: hidden;
+     margin-bottom: 50px;
+     padding-bottom: 35px;
+     .content_box{
+         width: 1200px;
+         margin: 15px auto 0;
+         overflow: hidden;
+         box-sizing: border-box;
+         background: #f4f4f4;
+         padding:15px 25px 0;
+         .goods_box{
+             padding:20px 0;
+             overflow: hidden;
+             background: #ffffff;
+             .goods{
+                 text-align: right;
+                 padding:25px 0;
+                 line-height: 170px;
+                 height: 170px;
+                 box-sizing: border-box;
+                 overflow: hidden;
+                  img{
+                 display: block;
+                 float: left;
+                 width: 120px;
+                 height: 120px;
+                     }
+                     .goods_content{
+                         
+                        margin-left: 30px;
+                         overflow: hidden;
+                         float: left;
+                         color: #999999;
+                         line-height: 120px;
+                         height: 120px;
+                         
+                         .goods_name_price{
+                             width: 570px;
+                             height: 120px;
+                             overflow: hidden;
+                             float: left;
+                             font-size: 16px;
+                              a{
+                                  
+                                font-size: 18px;
+                                float: left;
+                                color: #333333;
+                                transition: color 0.5s;
+                                &:hover{
+                                    color: #e62878;
+                                    text-decoration: underline;
+                                    transition: color 0.5s;
+                                    
+                                }
+                             }
+                             .rmb{
+                                 float: right;
+                             }
+                         }
+                         .reduce_plus{
+                             width: 220px;
+                             text-align: right;
+                             float: left;
+                             span{
+                                 margin: 0 10px;
+                                 color: #000000;
+                             }
+                             i{
+                                 font-size: 18px;
+                                 transition:color .3s;
+                                 color: #cfcfcf; 
+                                 cursor:pointer; 
+                                 &:hover{
+                                     color:  #e62878;
+                                     transition: color 0.3s;
+                                 }
+                             }
+                         }
+                         .zong_price{
+                             font-size: 16px;
+                             color: #000000;
+                             float: left;
+                             text-align: right;
+                             width: 120px;
+                         }
+                     }
+                     
+                 }
+                 .close{
+                    line-height: 120px;
+                    height: 120px;
+                    i{
+                        font-size: 18px;
+                         transition:color .3s;
+                         color: #cfcfcf; 
+                         cursor:pointer; 
+                         &:hover{
+                             color:  #e62878;
+                             transition: color 0.3s;
+                         }
+                    }
+                 }
+             }
+            
+         .payfor{ 
+                padding: 36px;  
+                .moneybox{
+                    line-height: 65px;
+                    height: 65px;
+                    text-align: right;
+                    span{
+                        color: #e62878;
+                        font-size: 26px;
+                        
+                    }
+                }
+                .btnbox{
+                    text-align: right;
+                    #payMoney{
+                    line-height: 48px;
+                    height: 48px;
+                    width: 250px;
+                    text-align: center;
+                    font-size: 20px;
+                    background: #e62878;
+                    transition: background 0.5s;
+                    border-radius: 3px;
+                    color:#ffffff;
+                    &:hover{
+                        background: #e64c8d;
+                        transition: background 0.5s;
+                    }
+                }
+                }
+                
+            }  
+        }
+    }

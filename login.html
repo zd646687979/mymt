@@ -5,12 +5,15 @@
 	<title>手机号登录</title>
 	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
 </head>
 <body>
 	<div id="content" class="content">
 		<p id="formChecked"></p>
 		<div class="logo"></div>
-		<form id="login" action="php/doLogin.php" method="post">	
 			<p class="username_box">
 				<span>+86</span>
 				<input type="text" id="username" value="" maxlength="11" placeholder="请输入手机号码"/>
@@ -26,7 +29,7 @@
 			</p>
 			<input type="button" id="suBtn" name=""  value="登录"/>
 			
-		</form>
+
 		<p class="reg_user_box">
 			<a href="" class="forget_pass">忘记密码</a> 丨 <a href="reguser.html" class="reg_user">用户注册</a>
 		</p>
@@ -59,3 +62,23 @@
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript" src="js/tools.js" ></script>
 <script type="text/javascript" src="js/login.js" ></script>
+<script type="text/javascript">
+$("#suBtn").parent().on("click","#suBtn",function(){
+	$.ajax({
+		type:"post",
+		url:"php/login.php",
+		data:{"username":$("#username").val(),
+			  "userpass":$("#userpass").val()
+			},
+		success:function(msg){
+			if(msg==0){
+				check("formChecked");
+				$("#formChecked").html("用户名或密码错误");
+			}else{
+				location.href="index.html";
+			}
+		}
+	});
+})
+	
+</script>

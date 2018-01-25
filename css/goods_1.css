@@ -27,6 +27,8 @@
       .content .content_box .goods_img_box img {
         width: 540px;
         height: 540px;
+        position: absolute;
+        z-index: 50;
         display: none; }
     .content .content_box .img {
       margin-top: 9px;
@@ -139,7 +141,8 @@
         .content .content_box .goods .add a {
           text-decoration: underline;
           color: #555555;
-          transition: color 0.5s; }
+          transition: color 0.5s;
+          cursor: pointer; }
           .content .content_box .goods .add a:hover {
             color: #e62878;
             transition: color 0.5s;

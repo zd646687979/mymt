@@ -5,26 +5,28 @@
 	<title>手机号注册</title>
 	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
 </head>
 <body>
+	
 	<div id="content" class="content">
 		<p id="formChecked"></p>
 		<div class="logo"></div>
-		<form id="login" action="php/doRegUser.php" method="post">	
+		<form id="login" action="php/reguser.php" method="post">	
 			<p class="username_box">
 				<span>+86</span>
-				<input type="text" id="username" value="" maxlength="11" placeholder="请输入手机号码"/>
+				<input type="text" name="username" id="username" value="" maxlength="11" placeholder="请输入手机号码"/>
 				<i id="usernameClose" class="iconfont icon-close-b"></i>
 			</p>
 			<p class="userpass_box">
-				<input type="password" id="userpass" value="" maxlength="16" placeholder="请输入密码"/>
+				<input type="password" name="userpass" id="userpass" value="" maxlength="16" placeholder="请输入密码"/>
 				<i id="userpassClose" class="iconfont icon-close-b"></i>
 				<i id="usereyes" class="iconfont icon-eyes"></i>
 			</p>
-			<p class="checked">
-				<a id="callCheck" href="">短信验证码登录</a>
-			</p>
-			<input type="button" id="suBtn" name=""  value="发送手机验证码"/>
+			<input type="submit" id="suBtn" name=""  value="发送手机验证码"/>
 			
 		</form>
 		<p class="reg_user_box">
@@ -59,3 +61,50 @@
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript" src="js/tools.js" ></script>
 <script type="text/javascript" src="js/login.js" ></script>
+<script type="text/javascript">
+let checkUsername = false;
+$("#username").keyup(function(){
+	$.ajax({
+		type:"get",
+		url:"php/checkUser.php",
+		data:"username="+$("#username").val(),
+		success:function(msg){
+			if(msg==1){
+				check("formChecked");
+				$("#formChecked").html("用户名已被注册");
+				checkUsername = false;
+			}else{
+				checkUsername = true;
+			}
+		}
+	});
+	
+});
+$("#suBtn").on("click",function(){
+	var nameStr = $("#username")[0].value;
+	var passStr = $("#userpass")[0].value;
+	if(!checkAll("Phone",nameStr)){
+		if(nameStr==""){
+			check("formChecked");
+			$("#formChecked")[0].innerHTML = "请输入手机号码！";
+			return;
+		}
+		check("formChecked");
+		$("#formChecked")[0].innerHTML = "请输入正确的手机号码！";
+		return;
+	}
+	if(!checkAll("userpass",passStr)){
+		if(passStr==""){
+			check("formChecked");
+			$("#formChecked")[0].innerHTML = "请输入密码！";
+			return;
+		}
+		check("formChecked");
+		$("#formChecked")[0].innerHTML = "请输入6-16位密码！";
+		return;
+	}
+	$("form").submit(function(){
+		return checkUsername;
+	});
+})
+</script>
