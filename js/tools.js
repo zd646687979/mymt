@@ -344,3 +344,30 @@ function createColorArr(colorArr,colorboxId,changetextId,buyId,imgBoxid,imgArr){
 					})
 		});
 	}
+//我的、、购物车商品
+function personSopping(){
+		$.ajax({
+		url:"getShoppingCart.php",
+		data:{"vipName":"18829038460"},
+		dataType:"json",
+		success:function(obj){
+				if(obj==""){
+					$(".mybox_first").css({"display":"block"})
+				}else{
+					$(".mybox_first").css({"display":"none"})
+					$(".mygoods_box").css({"display":"block"})
+					let str = "";
+					for(let i = 0 ; i<obj.length ; i++){
+						 goodsCount = obj[i].goodsCount;//个数
+						 goodsImgHref = obj[i].goodsImgHref;//图片路径
+						 goodsName = obj[i].goodsName;//名称
+						str+="<div class='mygoods'><a class='img' href="+"><img src='"+goodsImgHref+"'/></a>"+
+						"<div class='text_box'><div class='title_box'><p><a class='title' href="+">"+goodsName+"</a></p>"+
+						"<div>数量:<span class='goodsCount'> "+goodsCount+" </span></div></div><div class='close'>"+
+						"<i class='usernameClose iconfont icon-close-b'></i></div></div></div>";
+					}
+					$(".mygoods_box").append(str);
+				}
+		},
+		});
+	}

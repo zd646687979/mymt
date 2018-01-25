@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
-	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css?p=1">
 	<link rel="stylesheet" type="text/css" href="css/myshopping.css">
 	<meta http-equiv="Expires" content="0">
 	<meta http-equiv="Pragma" content="no-cache">
@@ -59,6 +59,9 @@
 					    -->
 	    				<ul id="mybox" class="mybox">
 					    	<li class="mybox_first">你的购物袋是空的</li>
+					    	<li class="mygoods_box">
+					    		
+					    	</li>
 					    	<li class="mybox_li"><i class="iconfont icon-gouwudai101"></i><a href="#">购物袋</a></li>
 					    	<li class="mybox_li"><i class="iconfont icon-rili"></i><a href="#">我的预约</a></li>
 					    	<li class="mybox_li"><i class="iconfont icon-zhengchangcaigoudingdan"></i><a href="#">我的订单</a></li>
@@ -172,7 +175,8 @@ function deleteGoods(){
 function changeCount(){
 		$("#goods_box #reduce").each(function(i){
 			$(this).on("click",function(){
-				let num = parseInt($(".goodsCount").eq(i).html());
+			
+			let num = parseInt($(".goodsCount").eq(i).html());
 			if(num==1){
 				return;
 			}
@@ -180,7 +184,7 @@ function changeCount(){
 			$(".goodsCount").eq(i).html(num-1);
 			//改变总价
 			let money = (num-1)*parseInt($(".goodsPrice").eq(i).html());
-			$(".zongjia").eq(i).html(money);
+			$(".zongjia").eq(i).html(mobney);
 			//改变合计价格
 				changeMoney();
 			})
@@ -204,5 +208,7 @@ function changeMoney(){
 						});
 						$("#money").html(zongMoney);
 					}
-						
+
+	//我的菜单购物车
+	personSopping();						
 </script>

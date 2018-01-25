@@ -3,53 +3,210 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css?p=1">
 <style type="text/css">
-	.color_box{
-		 overflow: hidden;
-         margin-left: -20px;
-         width: 620px;
+	*{
+		margin: 0;
+		padding: 0;
 	}
-	.color_box p{
-		 color: #333333;
-         float: left;
-         font-size: 18px;
-         box-sizing: border-box;
-         height:60px ;
-         line-height:60px ;
-         width: 290px;
-         margin:10px 0px  10px 20px;
-         border: 1px solid #cfcfcf;
-         border-radius: 3px;
-         border-color: rgb(207,207,207);
-         transition:  border-color 0.5s;
-         text-align: center;
-	}
-	p:hover{
-         border-color: rgb(230,40,120);
-         transition:  border-color 0.5s;
-       
-     }
-.goods_img_box{
-            position: relative;
-            overflow: hidden;
-            width: 540px;
-            height: 540px;
-            float:left;
-           
-         }
+  #mybox{
+                box-shadow:5px 0 5px #c8c8c8, -5px 0 5px #c8c8c8, 0px 5px 5px #c8c8c8;
+                position: absolute;
+                z-index: 20;
+                right: 100px;
+                top: 27px;
+                box-sizing: border-box;
+                width: 300px;
+                border: 1px solid #cfcfcf;
+                border-radius: 2px;
+                background: white;
+                padding:10px 20px ;
+        }
+               #mybox .shangjian{
+                    position: absolute;
+                    top: -6px;
+                    right: 92px;
+                    width:10px;
+                    height: 10px;
+                    border-left: 1px solid #cfcfcf;
+                    border-top: 1px solid #cfcfcf;
+                    transform: rotateZ(45deg);
+                    background: #fff;
+                }
+             #mybox  li{
+                    display: block;
+                    width: 100%;
+                }
+              #mybox  .mybox_li{
+                    margin: 0;
+                    height: 50px;
+                    line-height: 50px;
+                    box-sizing: border-box;
+                    border-bottom: 1px solid #cfcfcf;
+                    color: rgb(51,51,51);
+                    transition: color 0.5s;
+                    font-size: 14px;
+                }
+                 .mybox_li   i{
+                        vertical-align: middle;
+                        margin-right:10px ;
+                        font-size: 20px;
+                        transition: color 0.5s;
+                    }
+                 .mybox_li   a{
+                        vertical-align: middle;
+                        color: rgb(51,51,51);
+                        transition: color 0.5s;
+                    }
+                  .mybox_li:hover i ,.mybox_li:hover a{
+                        color: rgb(225,51,51);
+                        transition: color 0.5s;
+                  }
+                  .mybox_li:hover a{
+                        text-decoration: underline;
+                    }
+                    
+                
+              #mybox  .mybox_first{
+                    display: none;
+                    margin: 0;
+                    box-sizing: border-box;
+                    color: #999999;
+                    font-size: 14px;
+                    width: 100%;
+                    height: 80px;
+                    line-height: 80px;
+                    border-bottom: 1px solid #e7e7e7;
+                    text-align: center;
+                }
+                .mygoods_box{
+                	overflow: hidden;
+                }
+            .mygoods_box .mygoods{
+            	overflow: hidden;
+            	width: 258px;
+            	height: 90px;
+            	box-sizing: border-box;
+            	padding: 15px 0;
+            	border-bottom: 1px solid #e7e7e7;
+            }
+            .mygoods_box .mygoods .img{
+            	float: left;
+            	display: block;
+            	width: 50px;
+            	height: 50px;
+            }
+             .mygoods_box .mygoods .img img{
+             	display: block;
+            	width: 50px;
+            	height: 50px;
+             }
+            .mygoods_box .mygoods .text_box{
+            	width: 188px;
+            	height: 60px;
+            	line-height: 60px;
+            	float: right;
+            	text-align: right;
+            	overflow: hidden;
+            }
+            .mygoods_box .mygoods .text_box .title_box{
+            	float: left;
+            	width: 160px;
+            	height: 60px;
+            	overflow: hidden;
+            }
+            .mygoods_box .mygoods .text_box .close{
+            	float: right;
+            	width: 28px;
+            	height: 60px;
+            	line-height: 60px;
+            	text-align: center;
+            	overflow: hidden;
+            }
+            .mygoods_box .mygoods .text_box .close i{
+            	color: #B9BEEA;
+            	cursor: pointer;
+            }
+             .mygoods_box .mygoods .text_box .title_box p{
+             	height: 40px;
+             	line-height:20px;
+             	text-align: left;
+             }
+             .mygoods_box .mygoods .text_box .title_box .title{
+             	color: #333333;
+             	
+	            transition: color 0.5s;
+             	font-size:14px;
+             	text-decoration:none;
+             }
+             .mygoods_box .mygoods .text_box .title_box .title:hover{
+             	color: #e62878;
+	            text-decoration: underline;
+	            transition: color 0.5s;
+             }
+              .mygoods_box .mygoods .text_box .title_box div{
+              	height: 20px;
+             	line-height:20px;
+             	text-align: left;
+             	color: #999999;
+             	font-size:14px;
+              }
 </style>
 </head>
 <body>
-	<div id="color_box" class="color_box">
-		
-	</div>
-	<div id="goods_img_box" class="goods_img_box">
-		
-	</div>
+	<ul id="mybox" class="mybox">
+					    	<li class="mybox_first">
+					    		
+					    	</li>
+					    	<li class="mygoods_box">
+					    		
+					    	</li>
+					    	<li class="mybox_li"><i class="iconfont icon-gouwudai101"></i><a href="#">购物袋</a></li>
+					    	<li class="mybox_li"><i class="iconfont icon-rili"></i><a href="#">我的预约</a></li>
+					    	<li class="mybox_li"><i class="iconfont icon-zhengchangcaigoudingdan"></i><a href="#">我的订单</a></li>
+					    	<li class="mybox_li"><i class="iconfont icon-saoma"></i><a href="login.html">S码通道</a></li>
+					    	<li class="mybox_li"><i class="iconfont icon-denglu"></i><a href="login.html">登录</a></li>
+					    	<div class="shangjian"></div>
+   	</ul>
 </body>
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript">
+	$.ajax({
+		url:"getShoppingCart.php",
+		data:{"vipName":"18829038460"},
+		dataType:"json",
+		success:function(obj){
+				if(obj==""){
+					$(".mybox_first").css({"display":"block"})
+				}else{
+					$(".mygoods_box").css({"display":"block"})
+					let str = "";
+					for(let i = 0 ; i<obj.length ; i++){
+						 goodsCount = obj[i].goodsCount;//个数
+						 goodsImgHref = obj[i].goodsImgHref;//图片路径
+						 goodsName = obj[i].goodsName;//名称
+						str+="<div class='mygoods'><a class='img' href="+"><img src='"+goodsImgHref+"'/></a>"+
+						"<div class='text_box'><div class='title_box'><p><a class='title' href="+">"+goodsName+"</a></p>"+
+						"<div>数量:<span class='goodsCount'> "+goodsCount+" </span></div></div><div class='close'>"+
+						"<i class='usernameClose iconfont icon-close-b'></i></div></div></div>";
+					}
+					$(".mygoods_box").append(str);
+				}
+		},
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	let colorArr = ["Blue-Morning","PANDA&CHERRY","缤纷","海洋传说","环游世界","锦绘","蔓延","映像时空"];
 	function createColorArr(colorArr,colorboxId){
 		for(let i=0;i<colorArr.length;i++){

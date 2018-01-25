@@ -59,6 +59,9 @@
 						    -->
 		    				<ul id="mybox" class="mybox">
 						    	<li class="mybox_first">你的购物袋是空的</li>
+						    	<li class="mygoods_box">
+					    		
+					    		</li>
 						    	<li class="mybox_li"><i class="iconfont icon-gouwudai101"></i><a href="#">购物袋</a></li>
 						    	<li class="mybox_li"><i class="iconfont icon-rili"></i><a href="#">我的预约</a></li>
 						    	<li class="mybox_li"><i class="iconfont icon-zhengchangcaigoudingdan"></i><a href="#">我的订单</a></li>
@@ -199,20 +202,46 @@
 			dataType:"json",
 			success:function(data){
 				createGoods(data,"content_box");
+				
+				for(let i =0; i<=($("#content_box div").length%4) ;i++){
+					$("#content_box div").eq(i*4).css({"border-left" : 0});
+				}
+				if(($("#content_box div").length+4)%4!=0){
+					$("#content_box div").last().css({"border-right" : "1px solid #f1f1f1"});
+				}
 			}
 		});
-		
-		
-		
-		
-		
-		
-		for(let i =0; i<=($("#content_box div").length%4) ;i++){
-			$("#content_box div").eq(i*4).css({"border-left" : 0});
-		}
-		if(($("#content_box div").length+4)%4!=0){
-			$("#content_box div").last().css({"border-right" : "1px solid #f1f1f1"});
-		}
-	});
+	//我的菜单购物车
+	personSopping();	
+	
+	//删除
+//	let $close = $("#mybox .mygoods_box .mygoods");
+//					for(let i = 0 ; i<$close.length;i++){
+//					$close.eq(i).on("click",()=>{
+//							$.ajax({
+//								type:"get",
+////								"<div class='mygoods'><a class='img' href="+"><img src='"+goodsImgHref+"'/></a>"+
+////						"<div class='text_box'><div class='title_box'><p><a class='title' href="+">"+goodsName+"</a></p>"+
+////						"<div>数量:<span class='goodsCount'> "+goodsCount+" </span></div></div><div class='close'>"+
+////						"<i class='usernameClose iconfont icon-close-b'></i></div></div></div>"
+//								data:{
+//									"goodsCount":$("#mybox .mygoods .goodsCount").eq(i).html(),
+//									"goodsImgHref":$("#mybox .mygoods .img img").eq(i).attr("src"),
+//									"goodsName":$("#mybox .mygoods .title").eq(i).html()
+//								},
+//								url:"deleteGoods.php",
+//								success:function(data){
+//									if(data==1){
+//											alert("删除成功！");
+//											location.href="myshopping.html";
+//									}else{
+//										alert("删除失败!");
+//									}
+//								}
+//							});
+//							$(this).parent().css({"display":"none"})
+//						})
+//					}
+//	});
 </script>
 

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
-	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css?p=1">
 	<link rel="stylesheet" type="text/css" href="css/goods_1.css">
 	<meta http-equiv="Expires" content="0">
 	<meta http-equiv="Pragma" content="no-cache">
@@ -59,6 +59,9 @@
 					    -->
 	    				<ul id="mybox" class="mybox">
 					    	<li class="mybox_first">你的购物袋是空的</li>
+					    	<li class="mygoods_box">
+					    		
+					    	</li>
 					    	<li class="mybox_li"><i class="iconfont icon-gouwudai101"></i><a href="#">购物袋</a></li>
 					    	<li class="mybox_li"><i class="iconfont icon-rili"></i><a href="#">我的预约</a></li>
 					    	<li class="mybox_li"><i class="iconfont icon-zhengchangcaigoudingdan"></i><a href="#">我的订单</a></li>
@@ -219,6 +222,7 @@ $(function(){
 //  产生颜色选项
 	let colorArr = ["Blue-Morning","PANDA&CHERRY","缤纷","海洋传说","环游世界","锦绘","蔓延","映像时空"];
 	createColorArr(colorArr,"goods_color_Choice","color_title","buy","goods_img_box",imgArr);
+	//取得单价 和 商品名称
 	$.ajax({
 		type:"get",
 		url:"getGoodsInfo.php",
@@ -226,25 +230,26 @@ $(function(){
 		dataType:"json",
 		success:function(data){
 				price = data.goodsPrice;
-				$("#univalent").html(data.goodsPrice);
-				$("#goods_name").html(data.goodsName)
+				$("#univalent").html(price);
+				$("#goods_name").html(data.goodsName);
 				$("#reduce").parent().on("click","#reduce",function(){
 					let num = parseInt($("#number").html());
 					if(num==0){
 						return;
 					}
 					$("#number").html(num-1);
-					let money = (num-1)*data.goodsPrice;
+					let money = (num-1)*price;
 					$("#univalent").html(money);
 				});
 				$("#plus").parent().on("click","#plus",function(){
 					let num = parseInt($("#number").html());
 					$("#number").html(num+1);
-					let money = (num+1)*data.goodsPrice;
+					let money = (num+1)*price;
 					$("#univalent").html(money);
 				});
 			}
 	});
+	//添加商品
 	$("#addgoods").click(function(){
 		if($("#color_title").html()==""){
 			alert("请选择商品颜色！");
@@ -271,6 +276,10 @@ $(function(){
 			}
 		});
 	})
+	//我的菜单购物车
+	personSopping();
+
+	
 })
 
 </script>
