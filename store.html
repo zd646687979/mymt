@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>体验店</title>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/store.css?p=1">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+</head>
+<body>
+	<!--
+    	作者：offline
+    	时间：2018-01-26
+    	描述：头部公共
+    -->
+	<div class="header"></div>
+	<!--
+    	作者：offline
+    	时间：2018-01-26
+    	描述：banner
+    -->
+	<div class="banner">
+		<img src="img/store_banner.jpg" alt="" />
+	</div>
+	<!--
+    	作者：offline
+    	时间：2018-01-26
+    	描述：content
+    -->
+    <div class="content_box">
+    	<div class="title_change_box">
+    		<div class="title_change">
+    			<div class="shengDown"></div>
+	    		<select id="sheng" class="jsonbox">
+	    		</select>
+	    		<select id="shi"  class="jsonbox">
+	    		</select>
+    		</div>
+    	</div>
+    	<div id="content" class="content">
+    		<div>
+    			<p class="p1"></p>
+    			<p class="p2"></p>
+    			<p class="p3"></p>
+    			<p class="p4"></p>
+    		</div>
+    	</div>		
+    </div>
+    <!--
+    	作者：offline
+    	时间：2018-01-26
+    	描述：底部公共
+    -->
+    <div class="footer"></div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	//加载头部
+	$.ajax({
+		type:"get",
+		url:"php/top.php",
+		dataType:"html",
+		success:function(data){
+			$(".header").append(data);
+			//调用搜索框 控制 导航栏缩小动画
+				navSacle();
+			//调用展示，关闭  我的菜单动画
+				showMy();
+		}
+	});
+	//加载底部
+	$.ajax({
+		type:"get",
+		url:"php/footer.php",
+		dataType:"html",
+		success:function(data){
+			$(".footer").append(data);
+		}
+	});
+	$.ajax({
+		type:"get",
+		url:"json/myCity.json",
+		success:function(obj){
+			//创建省
+			let sheng="";
+			for(let key in obj){
+				sheng+="<option>"+key+"</option>";
+			}
+			$("#sheng").html(sheng);
+			shengShi(obj,"sheng","shi");
+			
+			//省市联动
+			$("#sheng").on("change",function(){
+				$.ajax({
+					type:"get",
+					url:"json/myCity.json",
+					success:function(obj){
+						shengShi(obj,"sheng","shi");
+					}
+				});
+			});
+			
+			//默认市
+			$.ajax({
+				type:"get",
+				url:"json/mydian.json",
+				success:function(obj){
+						shiDian(obj,"shi")
+					}
+				});
+			//市店联动
+				$("#shi").on("change",function(){
+				$.ajax({
+					type:"get",
+					url:"json/mydian.json",
+					success:function(obj){
+							shiDian(obj,"shi")
+						}
+					});
+				});
+			
+		}
+	});
+
+});
+function shengShi(obj,shengId,shiId){
+	let shi="";
+	let sheng = $("#"+shengId).val();
+	for(let i = 0 ; i<obj[sheng].length ; i++){
+		shi+="<option>"+obj[sheng][i].市名+"</option>";
+	}
+	$("#"+shiId).html(shi);
+}
+function shiDian(obj,shiId){
+	let shi = $("#"+shiId).val();
+	let dianpu ="";
+	if(obj[shi]==undefined){
+		dianpu ="该城市没有专卖店";
+	}else{
+		for(let i = 0 ; i<obj[shi].length ; i++){
+	//		dianpu+=obj[shi][i].名称;
+			dianpu+="<div><p class='p1'>"+obj[shi][i].名称+"</p><p class='p2 p5'>营业时间:"+obj[shi][i].营业时间+"</p>"+
+			"<p class='p3 p5'>电话:"+obj[shi][i].电话+"</p><p class='p4 p5'>地址:"+obj[shi][i].地址+"</p></div>";
+		}
+	}
+	$("#content").html(dianpu);
+}
+//		if(obj[sheng][i].体验店==undefined){
+//			continue;
+//		}else{
+//			dianpu = "";
+//			for(let l = 0 ; l<obj[sheng][i].体验店.length ; l++){
+//				dianpu+=obj[sheng][i].体验店[l].名称
+//			}
+//		}
+
+//	$("#content").html(dianpu);
+//<div>
+//  			<p class="p1"></p>
+//  			<p class="p2"></p>
+//  			<p class="p3"></p>
+//  			<p class="p4"></p>
+//  		</div>
+
+//	for(let i = 0 ; i<obj[shi].length ; i++){
+////		dianpu+=obj[shi][i].名称;
+//		dianpu+="<div><p class='p1'>"+obj[shi][i].名称+"</p><p class='p2 p5'>营业时间:"+obj[shi][i].营业时间+"</p>"+
+//		"<p class='p3 p5'>电话:"+obj[shi][i].电话+"</p><p class='p4 p5'>地址:"+obj[shi][i].地址+"</p></div>";
+//	}
+
+</script>

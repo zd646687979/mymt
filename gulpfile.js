@@ -18,6 +18,11 @@ gulp.task("copy-php",function(){
 	gulp.src("php/*.php")
 	.pipe(gulp.dest("D:\\phpStudy\\WWW\\mymt\\php"));
 });
+//拷贝JSON
+gulp.task("copy-json",function(){
+	gulp.src("json/*.json")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\mymt\\json"));
+});
 //拷贝SASSw
 gulp.task("sass",function(){
 	gulp.src("sass/*.scss")
@@ -44,6 +49,7 @@ gulp.task("copy-img",function(){
 //监听所有
 gulp.task("watchall",function(){
 	gulp.watch("*.*",["copy-html"]);
+	gulp.watch("json/*.json",["copy-json"]);
 	gulp.watch("php/*.php",["copy-php"]);
 	gulp.watch("goods/*.html",["copy-goods-html"]);
 	gulp.watch("sass/*.scss",["sass"]);

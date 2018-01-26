@@ -1,0 +1,68 @@
+.banner{
+    min-height: 530px;
+    img{
+        height: 100%;
+        
+    }
+}
+.content_box{
+    background:#f4f4f4;
+    .title_change_box{
+        height: 45px;
+        padding: 20px 0;
+        background: #ffffff;
+        position: relative;
+        .title_change{
+            overflow: hidden;
+            width: 620px;
+            margin: 0 auto;
+            .jsonbox{
+                float: left;
+                height:45px ;
+                width: 290px;
+                margin: 0 10px;
+                border:1px solid #B9BEEA ;
+                color:#333333;
+                font-size:18px;
+                line-height:45px ;
+                option{
+                    font-size: 14px;
+                }
+                &:focus{
+                    box-shadow:0;
+                    outline: -webkit-focus-ring-color auto 0px;
+                }
+            }
+        }   
+    }
+    .content{
+        width: 1200px;
+        min-height: 500px;
+        overflow: hidden;
+        margin: 40px auto 25px;
+        text-align: center;
+        div{
+            float:left;
+            width: 580px;
+            margin: 5px;
+            background: #ffffff;
+            box-sizing: border-box;
+            padding: 50px 35px 30px;
+            text-align: left;
+            .p1{
+                font-size: 16px;
+                color: #333;
+                line-height: 20px;
+            }
+            .p2{
+                margin-top: 15px;
+            }
+            .p5{
+                font-size: 14px;
+                color: #555;
+                line-height: 25px;
+                
+            }
+        }
+    }
+}
